@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,7 +12,91 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.logoText {
+  font-family: 'Lato', sans-serif;
+
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* For webkit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* For Firefox */
+html {
+  scrollbar-width: none;
+  /* Firefox 64 */
+}
+
+/* For Internet Explorer, Edge */
+body {
+  -ms-overflow-style: none;
+}
+
+.active {
+  background-color: theme('colors.PM');
+  color: theme('colors.SC');
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeOut {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(10px); }
+}
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-in-out;
+}
+.animate-fade-out {
+  animation: fadeOut 0.2s ease-in-out;
+}
+.App {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.kanban-board {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.task {
+  margin: 10px 0;
+  padding: 10px;
+  cursor: move;
+}
+
+
+details.detStyle{
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+
+}
+details.detStyle summary{
+outline:none;
+cursor:pointer;
+
+}
+details[open].detStyle {
+  background-color: rgba(0, 0, 0, 0.1);
+  height: auto;
+
+}
+details[open].detStyle summary{
+  padding-bottom: 1em;
 }
