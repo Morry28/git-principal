@@ -99,4 +99,5 @@ const array = [user, user2];
 const division = (a: User, b: User) => Math.abs(a.position.salary - b.position.salary);
 console.log('The difference in salary is: ' + division(user, user2) + ' EUR');
 
-console.glog(frog)
+console.log('WORKING CODE')
+
