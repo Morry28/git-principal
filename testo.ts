@@ -90,7 +90,7 @@ console.log("Number keys in user: ", numberKeys);
 const user2: User = {
     name: "Jane",
     age: 28,
-    position: { salary: 8888, startTime: new Date() },
+    position: { salary: 5555, startTime: new Date() },
     seniority: "Senior",
     home: { state: "California", city: "San Francisco" },
 };
