@@ -35,7 +35,7 @@ function getUserProperty<T, K extends keyof T>(user: T, key: K): T[K] {
 const user: User = {
     name: "John",
     age: 30,
-    position: { salary: 60000, startTime: new Date() },
+    position: { salary: 2560, startTime: new Date() },
     seniority: "Senior",
     home: { state: "California", city: "San Francisco" },
 };
@@ -86,3 +86,16 @@ function processNumberKeys<T extends object>(obj: T): (keyof T)[] {
 
 const numberKeys = processNumberKeys(user);
 console.log("Number keys in user: ", numberKeys);
+
+const user2: User = {
+    name: "Jane",
+    age: 28,
+    position: { salary: 1990, startTime: new Date() },
+    seniority: "Senior",
+    home: { state: "California", city: "San Francisco" },
+};
+
+const array = [user, user2];
+const division = (a: User, b: User) => Math.abs(a.position.salary - b.position.salary);
+console.log('The difference in salary is: ' + division(user, user2) + ' EUR');
+
